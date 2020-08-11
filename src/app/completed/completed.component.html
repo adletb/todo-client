@@ -1,0 +1,24 @@
+<div>
+	<mat-card>		
+		<mat-card-title> Выполненные задачи </mat-card-title>				
+		<mat-card-content>
+			<mat-list>				
+				<mat-list-item *ngFor="let todo of todos" >					
+					<h3 mat-line>                
+						<mat-checkbox value="" 
+							[checked]="todo.completed"
+							(change)="onChange(todo)"
+							color="primary" 
+							style="margin-right: 10px">
+						</mat-checkbox>
+						{{todo.title}}				
+					</h3>            
+					<button mat-button color="primary" 
+									(click)="Delete(todo)">Удалить
+					</button>
+				</mat-list-item> 
+			</mat-list>									  
+		</mat-card-content>		
+		<a mat-button color="primary" routerLink="/todo-list">К задачам</a>
+	</mat-card>
+</div>
